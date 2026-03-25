@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Proxy Site</title>
+</head>
+<body style="background:black; color:lime; text-align:center; font-family:sans-serif;">
+  <h1>Welcome to My Proxy Site</h1>
+  <input placeholder="Enter URL" style="width:300px; padding:5px;">
+  <button style="padding:5px 10px;">Go</button>
+</body>
+</html>
