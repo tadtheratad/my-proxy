@@ -1,11 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Proxy Site</title>
+  <style>
+    body {
+      background: black;
+      color: lime;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 100px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      background: #111;
+      color: lime;
+      border: 1px solid lime;
+      margin-right: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #111;
+      color: lime;
+      border: 1px solid lime;
+      cursor: pointer;
+    }
+    button:hover {
+      background: lime;
+      color: black;
+    }
+    #loading {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
 </head>
-<body style="background:black; color:lime; text-align:center; font-family:sans-serif;">
+<body>
   <h1>Welcome to My Proxy Site</h1>
-  <input placeholder="Enter URL" style="width:300px; padding:5px;">
-  <button style="padding:5px 10px;">Go</button>
+  <input id="urlInput" type="text" placeholder="Enter URL here">
+  <button onclick="goProxy()">Go</button>
+  <div id="loading">Loading...</div>
+
+  <script>
+    function goProxy() {
+      const url = document.getElementById("urlInput").value;
+      if (!url) {
+        alert("Please enter a URL");
+        return;
+      }
+      // Show fake loading effect
+      const loading = document.getElementById("loading");
+      loading.style.display = "block";
+      setTimeout(() => {
+        loading.style.display = "none";
+        // Open the URL in a new tab (for demo purposes)
+        window.open(url.startsWith("http") ? url : "https://" + url, "_blank");
+      }, 1000); // 1 second fake loading
+    }
+  </script>
 </body>
 </html>
